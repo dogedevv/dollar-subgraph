@@ -1,0 +1,34 @@
+type ExampleEntity @entity {
+  id: ID!
+  count: BigInt!
+  epoch: BigInt! # uint256
+  timestamp: BigInt! # uint256
+}
+
+type EpochEvent @entity {
+  id: ID! # the Epoch ID.
+  timestamp: BigInt! # The Season timestamp.
+
+  newDollars: BigInt! # Number of new dollars minted
+  newBonds: BigInt! # Number of new debt
+  interestRate: BigInt!
+  interestRateChange: BigInt!
+  debtRate: BigInt!
+}
+
+type NewSupplyEvent @entity {
+  id: ID! # the Epoch ID.
+  amount: BigInt!
+}
+
+type NewBondsEvent @entity {
+  id: ID! # the Epoch ID.
+  amount: BigInt!
+}
+
+type NewInterestRateEvent @entity {
+  id: ID! # the Epoch ID.
+  interestRate: BigInt!
+  interestRateChange: BigInt!
+  debtRate: BigInt!
+}
